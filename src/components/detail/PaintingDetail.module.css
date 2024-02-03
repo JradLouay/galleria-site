@@ -1,0 +1,44 @@
+.detail-container {
+  display: grid;
+  gap: 30px;
+  padding-top: 60px;
+  grid-template-columns: 62.8% 1fr;
+  width: 100%;
+}
+
+.desciption-section {
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 475px 1fr;
+  grid-template-rows: min-content 1fr;
+  column-gap: 30px;
+}
+
+.paragraph {
+  color: var(--color-gray);
+  max-width: 350px;
+  margin-bottom: 81px;
+}
+
+.painting {
+  grid-row: 1 / span 2;
+}
+
+.painting img {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .detail-container {
+    grid-template-columns: none;
+  }
+  .desciption-section {
+    text-align: center;
+  }
+  .paragraph {
+    max-width: unset;
+  }
+}

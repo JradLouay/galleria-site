@@ -1,0 +1,28 @@
+.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+  border-bottom-color: var(--color-light-gray);
+}
+
+.button {
+  color: var(--color-gray);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 2.571px;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
+
+.button:hover {
+  color: var(--color-black);
+}
