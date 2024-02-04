@@ -1,9 +1,9 @@
 .layout {
-  padding-block: 40px;
+  padding: 40px 40px 115px 40px;
 }
 
 @media (max-width: 768px) {
   .layout {
-    padding-block: 24px;
+    padding: 24px 24px 115px 24px;
   }
 }

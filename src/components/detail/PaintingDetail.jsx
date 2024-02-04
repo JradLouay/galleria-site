@@ -2,9 +2,15 @@ import styles from "./PaintingDetail.module.css";
 
 function PaintingDetail() {
   return (
-    <div className={styles["detail-container"]}>
+    <section className={styles["detail-section"]}>
       <div className={styles["hero-section"]}>
         <div className={styles.painting}>
+          <button className={styles["view-image"]}>
+            <span>
+              <img src="/assets/shared/icon-view-image.svg" alt="full screen" />
+            </span>
+            view image
+          </button>
           <img src="./assets/the-sleeping-gypsy/hero-large.jpg"></img>
         </div>
         <header className={styles.header}>
@@ -21,9 +27,7 @@ function PaintingDetail() {
         ></img>
       </div>
       <div className={styles["desciption-section"]}>
-        <p className="display" style={{ marginBottom: "-35px" }}>
-          1889
-        </p>
+        <p className={`display ${styles.year}`}>1889</p>
 
         <p className={`body ${styles.paragraph}`}>
           Although The Starry Night was painted during the day in Van Goghs
@@ -46,7 +50,7 @@ function PaintingDetail() {
           GO TO SOURCE
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

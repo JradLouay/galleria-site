@@ -3,11 +3,11 @@ import styles from "./Gallery.module.css";
 import GalleryItem from "./GalleryItem";
 function Gallery() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       {data.map(function mapData(item, index) {
         return <GalleryItem key={index} item={item} />;
       })}
-    </div>
+    </section>
   );
 }
 

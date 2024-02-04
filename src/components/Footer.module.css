@@ -1,0 +1,68 @@
+.footer {
+  position: fixed;
+  z-index: 2;
+  inset-inline: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: 16px 24px;
+}
+.footer progress {
+  position: absolute;
+  top: -1px;
+  height: 1px;
+  inset-inline: 0;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.footer progress::-webkit-progress-bar {
+  background-color: var(--color-light-gray);
+}
+.footer progress::-webkit-progress-value {
+  background-color: var(--color-black);
+}
+
+.painting-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.action-area {
+  display: flex;
+  gap: 20px;
+}
+
+.action-area button {
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+}
+.action-area button:hover {
+  opacity: 0.5;
+}
+
+.action-area button:disabled {
+  opacity: 0.15;
+}
+
+.action-area img {
+  height: 16px;
+  width: 16px;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 24px 40px;
+  }
+  .action-area img {
+    height: 24px;
+    width: 24px;
+  }
+}
