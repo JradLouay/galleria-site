@@ -1,9 +1,14 @@
 .layout {
-  padding: 40px 40px 115px 40px;
+  padding: 40px 0px;
 }
 
+@media (max-width: 1440px) {
+  .layout {
+    padding: 40px 40px;
+  }
+}
 @media (max-width: 768px) {
   .layout {
-    padding: 24px 24px 115px 24px;
+    padding: 24px 24px 24px 24px;
   }
 }

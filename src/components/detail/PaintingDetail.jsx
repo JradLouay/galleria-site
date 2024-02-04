@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import styles from "./PaintingDetail.module.css";
+import { GalleryContext } from "../../GalleryContext";
 
 function PaintingDetail() {
+  const { galleryPictures, currentPictureIndex } = useContext(GalleryContext);
+  const currentPicture = galleryPictures[currentPictureIndex];
   return (
     <section className={styles["detail-section"]}>
       <div className={styles["hero-section"]}>
@@ -11,44 +15,39 @@ function PaintingDetail() {
             </span>
             view image
           </button>
-          <img src="./assets/the-sleeping-gypsy/hero-large.jpg"></img>
+          <img
+            src={currentPicture.images.hero.large}
+            alt={`${currentPicture.artist.name} ${currentPicture.name}`}
+          ></img>
         </div>
         <header className={styles.header}>
           <p className={`heading1 ${styles["painting-name"]}`}>
-            The Sleeping Gypsy
+            {currentPicture.name}
           </p>
           <p className={`subhead1 ${styles["painting-author"]}`}>
-            Henri Rousseau
+            {currentPicture.artist.name}
           </p>
         </header>
         <img
           className={styles["author-image"]}
-          src="./assets/the-sleeping-gypsy/artist.jpg"
+          src={currentPicture.artist.image}
+          alt={currentPicture.artist.name}
         ></img>
       </div>
-      <div className={styles["desciption-section"]}>
-        <p className={`display ${styles.year}`}>1889</p>
+      <div className={styles["description-section"]}>
+        <p className={`display ${styles.year}`}>{currentPicture.year}</p>
 
         <p className={`body ${styles.paragraph}`}>
-          Although The Starry Night was painted during the day in Van Goghs
-          ground-floor studio, it would be inaccurate to state that the picture
-          was painted from memory. The view has been identified as the one from
-          his bedroom window, facing east, a view which Van Gogh painted
-          variations of no fewer than twenty-one times, including The Starry
-          Night. Through the iron-barred window, he wrote to his brother, Theo,
-          around 23 May 1889, I can see an enclosed square of wheat ... above
-          which, in the morning, I watch the sun rise in all its glory.
+          {currentPicture.description}
         </p>
-
-        <div
-          className="link2"
-          style={{
-            color: "black",
-            textAlign: "left",
-          }}
+        <a
+          href={currentPicture.source}
+          className={`link2 ${styles.link}`}
+          target="_blank"
+          rel="noreferrer"
         >
           GO TO SOURCE
-        </div>
+        </a>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@
   padding-top: 60px;
   grid-template-columns: 62.8% 1fr;
   width: 100%;
+  padding-bottom: 150px;
 }
 
 .hero-section {
@@ -56,14 +57,13 @@
   justify-content: center;
   align-items: center;
   gap: 14px;
-  background-color: var(--color-black);
+  background-color: rgba(0, 0, 0, 0.7546);
   text-transform: uppercase;
   cursor: pointer;
   outline: none;
   border: 0;
   color: white;
   padding: 14px 16px;
-  opacity: 0.7546;
   font-size: 10px;
   font-style: normal;
   font-weight: 700;
@@ -80,6 +80,11 @@
   object-fit: cover;
   max-width: 100%;
 }
+
+.link {
+  color: var(--color-gray);
+}
+
 @media (max-width: 1440px) {
   .detail-section {
     padding-top: unset;
@@ -97,11 +102,14 @@
     margin-left: 115px;
     max-width: 457px;
   }
+  .link {
+    margin-left: 115px;
+  }
   .header {
     margin-left: -232px;
   }
-  .desciption-section {
-    text-align: center;
+  .description-section {
+    /* text-align: left; */
   }
 
   .author-image {
@@ -135,6 +143,10 @@
     margin-bottom: 40px;
     margin-left: unset;
     max-width: unset;
+  }
+
+  .link {
+    margin-left: unset;
   }
 
   .hero-section {

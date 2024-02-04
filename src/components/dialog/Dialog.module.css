@@ -1,0 +1,12 @@
+dialog {
+  width: calc(100% - 48px);
+  max-width: max-content;
+  max-height: max-content;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+dialog::backdrop {
+  background-color: red;
+  height: 100%;
+}

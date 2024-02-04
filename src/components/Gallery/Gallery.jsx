@@ -5,7 +5,7 @@ function Gallery() {
   return (
     <section className={styles.container}>
       {data.map(function mapData(item, index) {
-        return <GalleryItem key={index} item={item} />;
+        return <GalleryItem key={index} item={item} index={index} />;
       })}
     </section>
   );
