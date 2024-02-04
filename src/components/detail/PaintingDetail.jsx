@@ -7,23 +7,16 @@ function PaintingDetail() {
         <div className={styles.painting}>
           <img src="./assets/the-sleeping-gypsy/hero-large.jpg"></img>
         </div>
-        <div
-          style={{
-            paddingLeft: "65px",
-            paddingBottom: "67px",
-            marginLeft: "-95px",
-            backgroundColor: "white",
-          }}
-        >
-          <p className="heading1" style={{ marginBottom: "24px" }}>
+        <header className={styles.header}>
+          <p className={`heading1 ${styles["painting-name"]}`}>
             The Sleeping Gypsy
           </p>
-          <p className="subhead1" style={{}}>
+          <p className={`subhead1 ${styles["painting-author"]}`}>
             Henri Rousseau
           </p>
-        </div>
+        </header>
         <img
-          style={{ margin: "auto 0 -64px;" }}
+          className={styles["author-image"]}
           src="./assets/the-sleeping-gypsy/artist.jpg"
         ></img>
       </div>
