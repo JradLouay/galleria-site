@@ -9,10 +9,10 @@ function PaintingDetail() {
   const modalRef = useRef();
 
   function openModal() {
-    modalRef.current?.showModal();
+    modalRef.current.showModal();
   }
   function closeModal() {
-    modalRef.current?.close();
+    modalRef.current.close();
   }
   return (
     <>
