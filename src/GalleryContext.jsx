@@ -1,11 +1,16 @@
 import { createContext, useReducer } from "react";
+import PropTypes from "prop-types";
 import pictures from "./assets/data.json";
+
 export const GalleryContext = createContext();
 
 const initialState = {
   galleryPictures: pictures,
   currentPictureIndex: null,
   stopTimer: false,
+};
+GalleryContextProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export function GalleryContextProvider({ children }) {

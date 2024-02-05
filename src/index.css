@@ -31,12 +31,37 @@ button {
   font-display: swap;
 }
 
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
 .display {
   color: #f3f3f3;
   font-size: 200px;
   font-style: normal;
   font-weight: 700;
   line-height: 150px;
+}
+
+.body {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 .heading1 {
@@ -89,31 +114,6 @@ button {
   line-height: normal;
   letter-spacing: 1.929px;
   text-decoration-line: underline;
-}
-
-.body {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px;
-}
-
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-}
-
-body {
-  margin: 0 auto;
-  min-height: 100vh;
 }
 
 @media (max-width: 768px) {

@@ -14,6 +14,10 @@
   column-gap: 30px;
 }
 
+.description-section {
+  text-align: left;
+}
+
 .header {
   padding-left: 65px;
   padding-bottom: 67px;
@@ -102,16 +106,14 @@
     margin-left: 115px;
     max-width: 457px;
   }
+
   .link {
     margin-left: 115px;
   }
+
   .header {
     margin-left: -232px;
   }
-  .description-section {
-    /* text-align: left; */
-  }
-
   .author-image {
     margin: unset;
   }

@@ -1,12 +1,37 @@
-dialog {
-  width: calc(100% - 48px);
-  max-width: max-content;
-  max-height: max-content;
+.dialog {
   padding: 0;
   border: 0;
-  background-color: transparent;
+  background: transparent;
+  max-width: 917px;
+  height: 80%;
+  overflow: hidden;
+  text-align: right;
 }
-dialog::backdrop {
-  background-color: red;
+
+.dialog img {
   height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.dialog::backdrop {
+  opacity: 0.8539;
+  background-color: #000;
+}
+
+.dialog button {
+  color: white;
+  text-align: center;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  margin-bottom: 40px;
+  padding-inline: 0;
+  padding-block: 0;
+  line-height: normal;
+}
+.dialog button:hover {
+  opacity: 0.25;
 }

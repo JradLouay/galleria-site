@@ -5,7 +5,6 @@ import Gallery from "./Gallery/Gallery";
 import Header from "./Header";
 import styles from "./Layout.module.css";
 import PaintingDetail from "./detail/PaintingDetail";
-import Dialog from "./dialog/Dialog";
 function Layout() {
   const { currentPictureIndex } = useContext(GalleryContext);
   const isPictureSelected = typeof currentPictureIndex !== "number";
@@ -16,7 +15,6 @@ function Layout() {
         {isPictureSelected ? <Gallery /> : <PaintingDetail />}
       </main>
       {!isPictureSelected && <Footer />}
-      {/* <Dialog /> */}
     </>
   );
 }

@@ -1,16 +1,22 @@
-import { useState } from "react";
-import ReactDOM from "react-dom";
-import "./Dialog.module.css";
+import { forwardRef } from "react";
+import PropTypes from "prop-types";
 
-function Dialog() {
-  const [open, setOpen] = useState(true);
-  return ReactDOM.createPortal(
-    <dialog aria-modal="true" open={open} className="modal-dialog">
-      <button>Close</button>
-      <p>This modal dialog has a groovy backdrop!</p>
-    </dialog>,
-    document.body
+import styles from "./Dialog.module.css";
+
+const Dialog = forwardRef(function Dialog(props, ref) {
+  const { PaintingUrl, closeModal } = props;
+  return (
+    <dialog aria-modal="true" ref={ref} className={styles.dialog}>
+      <button onClick={closeModal} className="body">
+        close
+      </button>
+      <img src={PaintingUrl} alt={"painting"} />
+    </dialog>
   );
-}
+});
+Dialog.propTypes = {
+  PaintingUrl: PropTypes.string.isRequired,
+  closeModal: PropTypes.func.isRequired,
+};
 
 export default Dialog;

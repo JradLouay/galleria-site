@@ -26,11 +26,11 @@ function Footer() {
   }
   return (
     <footer className={styles.footer}>
-      <label hidden htmlFor="timer">
-        Timer
+      <label hidden htmlFor="progress">
+        Progress
       </label>
       <progress
-        id="timer"
+        id="progress"
         value={currentPictureIndex + 1}
         max={galleryPictures.length}
       ></progress>
