@@ -75,6 +75,10 @@
   letter-spacing: 2.143px;
 }
 
+.view-image:hover {
+  background-color: rgba(255, 255, 255, 0.2522);
+}
+
 .view-image .img {
   height: 12px;
   width: 12px;
