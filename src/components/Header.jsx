@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { GalleryContext } from "../GalleryContext";
 import styles from "./header.module.css";
+import { useNavigate } from "react-router-dom";
 function Header() {
+  const navigate = useNavigate();
   const { dispatch, currentPictureIndex } = useContext(GalleryContext);
   const isPictureSelected = typeof currentPictureIndex !== "number";
   function action() {
@@ -9,10 +11,12 @@ function Header() {
       dispatch({
         type: "end-slide-show",
       });
+      navigate("/");
     } else {
       dispatch({
         type: "start-slide-show",
       });
+      navigate("/slideshow");
     }
   }
   return (

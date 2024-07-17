@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { GalleryContext } from "../GalleryContext";
 import Footer from "./Footer";
-import Gallery from "./Gallery/Gallery";
 import Header from "./Header";
 import styles from "./Layout.module.css";
-import PaintingDetail from "./detail/PaintingDetail";
+import { Outlet } from "react-router-dom";
 function Layout() {
   const { currentPictureIndex } = useContext(GalleryContext);
   const isPictureSelected = typeof currentPictureIndex !== "number";
@@ -12,7 +11,7 @@ function Layout() {
     <>
       <Header />
       <main className={styles.layout}>
-        {isPictureSelected ? <Gallery /> : <PaintingDetail />}
+        <Outlet />
       </main>
       {!isPictureSelected && <Footer />}
     </>
