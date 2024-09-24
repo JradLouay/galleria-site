@@ -12,12 +12,12 @@ function App() {
       element: <Layout />,
       children: [
         {
-          path: "slideshow",
-          element: <PaintingDetail />,
+          path: "/",
+          element: <Gallery />,
         },
         {
-          path: "",
-          element: <Gallery />,
+          path: "/slideshow/:paintingName",
+          element: <PaintingDetail />,
         },
       ],
     },

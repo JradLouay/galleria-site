@@ -3,21 +3,22 @@ import styles from "./GalleryItem.module.css";
 import { useContext } from "react";
 import { GalleryContext } from "../../GalleryContext";
 import { useNavigate } from "react-router-dom";
+import { getImageIndexByName } from "../../utils";
 
 GalleryItem.propTypes = {
   item: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired,
 };
 
-function GalleryItem({ item, index }) {
+function GalleryItem({ item }) {
   const navigate = useNavigate();
   const { dispatch } = useContext(GalleryContext);
   function selectPicture() {
     dispatch({
       type: "select-picture",
-      payload: { pictureIndex: index },
+      payload: { pictureIndex: getImageIndexByName(item.name) },
     });
-    navigate("/slideshow");
+    navigate(`/slideshow/${item.name}`);
   }
   return (
     <article onClick={selectPicture} className={styles.item}>

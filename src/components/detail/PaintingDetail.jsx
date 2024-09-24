@@ -1,12 +1,14 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 import styles from "./PaintingDetail.module.css";
-import { GalleryContext } from "../../GalleryContext";
 import Dialog from "../dialog/Dialog";
+import { useParams } from "react-router-dom";
+import { getImageByName } from "../../utils";
 
 function PaintingDetail() {
-  const { galleryPictures, currentPictureIndex } = useContext(GalleryContext);
-  const currentPicture = galleryPictures[currentPictureIndex];
+  const params = useParams();
+  const currentPicture = getImageByName(params.paintingName);
   const modalRef = useRef();
+  console.log(currentPicture);
 
   function openModal() {
     modalRef.current.showModal();

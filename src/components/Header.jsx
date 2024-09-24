@@ -2,21 +2,16 @@ import { useContext } from "react";
 import { GalleryContext } from "../GalleryContext";
 import styles from "./header.module.css";
 import { useNavigate } from "react-router-dom";
+import paintings from "../assets/data.json";
 function Header() {
   const navigate = useNavigate();
-  const { dispatch, currentPictureIndex } = useContext(GalleryContext);
-  const isPictureSelected = typeof currentPictureIndex !== "number";
+  const { currentPictureIndex } = useContext(GalleryContext);
+  const isPictureSelected = typeof currentPictureIndex === "number";
   function action() {
-    if (!isPictureSelected) {
-      dispatch({
-        type: "end-slide-show",
-      });
+    if (isPictureSelected) {
       navigate("/");
     } else {
-      dispatch({
-        type: "start-slide-show",
-      });
-      navigate("/slideshow");
+      navigate(`/slideshow/${paintings[0].name}`);
     }
   }
   return (
@@ -31,7 +26,7 @@ function Header() {
         type="button"
         className={`link1 ${styles.button}`}
       >
-        {isPictureSelected ? "start slideshow" : "stop slideshow"}
+        {!isPictureSelected ? "start slideshow" : "stop slideshow"}
       </button>
     </header>
   );

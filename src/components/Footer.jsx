@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import styles from "./Footer.module.css";
 import { GalleryContext } from "../GalleryContext";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
   const { dispatch, currentPictureIndex, galleryPictures } =
     useContext(GalleryContext);
   const isFirstPicture = currentPictureIndex === 0;
@@ -15,6 +17,7 @@ function Footer() {
         pictureIndex: currentPictureIndex + 1,
       },
     });
+    navigate(`/slideshow/${galleryPictures[currentPictureIndex + 1].name}`);
   }
   function prevPicture() {
     dispatch({
@@ -23,6 +26,7 @@ function Footer() {
         pictureIndex: currentPictureIndex - 1,
       },
     });
+    navigate(`/slideshow/${galleryPictures[currentPictureIndex + 1].name}`);
   }
   return (
     <footer className={styles.footer}>
