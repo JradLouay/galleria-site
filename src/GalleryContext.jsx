@@ -5,9 +5,7 @@ import pictures from "./assets/data.json";
 export const GalleryContext = createContext();
 
 const initialState = {
-  galleryPictures: pictures,
-  currentPictureIndex: null,
-  stopTimer: false,
+  galleryLength: pictures.length,
 };
 GalleryContextProvider.propTypes = {
   children: PropTypes.node,

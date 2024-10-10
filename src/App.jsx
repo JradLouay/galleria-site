@@ -16,7 +16,7 @@ function App() {
           element: <Gallery />,
         },
         {
-          path: "/slideshow/:paintingName",
+          path: "/slideshow/:paintingIndex/:paintingName",
           element: <PaintingDetail />,
         },
       ],

@@ -1,26 +1,26 @@
-import { useContext } from "react";
-import { GalleryContext } from "../GalleryContext";
 import styles from "./header.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import paintings from "../assets/data.json";
 function Header() {
   const navigate = useNavigate();
-  const { currentPictureIndex } = useContext(GalleryContext);
-  const isPictureSelected = typeof currentPictureIndex === "number";
+  const params = useParams();
+  const isPictureSelected = "paintingName" in params;
   function action() {
     if (isPictureSelected) {
       navigate("/");
     } else {
-      navigate(`/slideshow/${paintings[0].name}`);
+      navigate(`/slideshow/0/${paintings[0].name}`);
     }
   }
   return (
     <header className={styles.header}>
-      <img
-        src="/assets/shared/logo.svg"
-        alt="galleria logo"
-        className={styles.logo}
-      />
+      <a href="/">
+        <img
+          src="/assets/shared/logo.svg"
+          alt="galleria logo"
+          className={styles.logo}
+        />
+      </a>
       <button
         onClick={action}
         type="button"

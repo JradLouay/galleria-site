@@ -7,8 +7,8 @@ import { getImageByName } from "../../utils";
 function PaintingDetail() {
   const params = useParams();
   const currentPicture = getImageByName(params.paintingName);
-  const modalRef = useRef();
   console.log(currentPicture);
+  const modalRef = useRef();
 
   function openModal() {
     modalRef.current.showModal();
