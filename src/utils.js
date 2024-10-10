@@ -1,7 +1,11 @@
 import paintings from "./assets/data.json";
 
-export function getImageByName(name) {
+export function getPaintingByName(name) {
   return paintings.find((painting) => name === painting.name);
+}
+
+export function getGallerySize() {
+  return paintings.length;
 }
 
 export function getNextAndPreviousPainting(currentPaintingIndex) {

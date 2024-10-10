@@ -1,22 +1,23 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Footer.module.css";
-import { useContext } from "react";
-import { GalleryContext } from "../GalleryContext";
-import { getImageByName, getNextAndPreviousPainting } from "../utils";
+import {
+  getPaintingByName,
+  getNextAndPreviousPainting,
+  getGallerySize,
+} from "../utils";
 
 function Footer() {
   const params = useParams();
   const navigate = useNavigate();
-  const { galleryLength } = useContext(GalleryContext);
   if (!("paintingName" in params)) {
     return null;
   }
-  const currentPicture = getImageByName(params.paintingName);
+  const currentPicture = getPaintingByName(params.paintingName);
   const currentPaintingIndex = Number(params.paintingIndex);
   const { nextPaintingName, previousPaintingName } =
     getNextAndPreviousPainting(currentPaintingIndex);
   const isFirstPicture = currentPaintingIndex === 0;
-  const isLastPicture = currentPaintingIndex === galleryLength - 1;
+  const isLastPicture = currentPaintingIndex === getGallerySize() - 1;
 
   function nextPicture() {
     navigate(`/slideshow/${currentPaintingIndex + 1}/${nextPaintingName}`);
@@ -33,7 +34,7 @@ function Footer() {
       <progress
         id="progress"
         value={currentPaintingIndex + 1}
-        max={galleryLength}
+        max={getGallerySize()}
       ></progress>
       <div className={styles["painting-info"]}>
         <p className={`heading3 ${styles["painting-name"]}`}>

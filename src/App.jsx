@@ -1,5 +1,4 @@
 import "./App.css";
-import { GalleryContextProvider } from "./GalleryContext";
 import Gallery from "./components/Gallery/Gallery";
 import Layout from "./components/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -22,11 +21,7 @@ function App() {
       ],
     },
   ]);
-  return (
-    <GalleryContextProvider>
-      <RouterProvider router={router} />
-    </GalleryContextProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

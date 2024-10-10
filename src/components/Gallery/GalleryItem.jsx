@@ -1,9 +1,6 @@
 import PropTypes from "prop-types";
 import styles from "./GalleryItem.module.css";
-// import { useContext } from "react";
-// import { GalleryContext } from "../../GalleryContext";
 import { useNavigate } from "react-router-dom";
-// import { getImageIndexByName } from "../../utils";
 
 GalleryItem.propTypes = {
   item: PropTypes.object.isRequired,
@@ -12,12 +9,7 @@ GalleryItem.propTypes = {
 
 function GalleryItem({ item, index }) {
   const navigate = useNavigate();
-  // const { dispatch } = useContext(GalleryContext);
   function selectPicture() {
-    // dispatch({
-    //   type: "select-picture",
-    //   payload: { pictureIndex: getImageIndexByName(item.name) },
-    // });
     navigate(`/slideshow/${index}/${item.name}`);
   }
   return (

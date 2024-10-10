@@ -2,11 +2,11 @@ import { useRef } from "react";
 import styles from "./PaintingDetail.module.css";
 import Dialog from "../dialog/Dialog";
 import { useParams } from "react-router-dom";
-import { getImageByName } from "../../utils";
+import { getPaintingByName } from "../../utils";
 
 function PaintingDetail() {
   const params = useParams();
-  const currentPicture = getImageByName(params.paintingName);
+  const currentPicture = getPaintingByName(params.paintingName);
   console.log(currentPicture);
   const modalRef = useRef();
 
